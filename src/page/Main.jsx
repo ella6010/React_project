@@ -1,5 +1,19 @@
+import { Link } from "react-router-dom";
+import { data } from "../assets/data/data"
+
 function Main() {
-    return<>메인페이지</>
+    return (
+        <ul>
+            {data.map(el => (
+                <li key={el.id}>
+                    <Link to={`/detail/${el.id}`}>
+                        <img src={el.img} />
+                        <div>{el.name}</div>
+                    </Link>
+                </li>
+            ))}
+        </ul>
+    );
 }
 
-export default Main
+export default Main;
